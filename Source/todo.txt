@@ -1,0 +1,14 @@
+BUGS
+
+  - user mouse already over element when event listeners are activated (mouseout glitch)
+  - scrollable during startup animation
+  - animation scalability (big screens show lines all the time)
+
+SUPPORT
+
+  - all main browsers
+  - mobile browsers
+  - different screen sizes
+  - manual screen size change -> scrollbars
+  - switching off transitions
+  - convert units to viewport units

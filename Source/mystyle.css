@@ -1,0 +1,484 @@
+* {
+  font-family: sans-serif;
+  color: rgb(255, 255, 255);
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+#main-grid-container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.main-grid-item {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition-property: left;
+  transition-duration: 2s;
+}
+
+#left {
+  grid-column: 1 / span 4;
+  grid-row: 1;
+}
+
+#navbar {
+  grid-column: 5 / span 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+}
+
+#right {
+  grid-column: 7 / span 4;
+  grid-row: 1;
+}
+
+.navbar-item {
+  transition-property: opacity, color;
+  transition-duration: 0.3s, 0.3s;
+}
+
+/* ------ NAVIGATION BAR TOP (4) ------ */
+
+#navbar-top-middle-top {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  border-right: solid;
+}
+
+#navbar-top-middle-bottom {
+  grid-column: 2;
+  grid-row: 3 / span 2;
+  border-right: solid;
+}
+
+#navbar-top-right-top {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.75em;
+  border-left: solid;
+}
+
+#navbar-top-right-bottom {
+  grid-column: 3;
+  grid-row: 3 / span 2;
+  display: flex;
+  align-items: flex-end;
+  font-size: 3.5em;
+  border-left: solid;
+}
+
+/* ------ NAVIGATION BAR MIDDLE (3) ------ */
+
+#navbar-middle-left {
+  grid-column: 1;
+  grid-row: 5;
+  text-align: right;
+  font-size: 1.2em;
+  border-right: solid;
+}
+
+#navbar-middle-middle {
+  grid-column: 2;
+  grid-row: 5;
+  border-left: solid;
+  border-right: solid;
+}
+
+#navbar-middle-right {
+  grid-column: 3;
+  grid-row: 5;
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.2em;
+  border-left: solid;
+}
+
+/* ------ NAVIGATION BAR BOTTOM (4) ------ */
+
+#navbar-bottom-left-top {
+  grid-column: 1;
+  grid-row: 6 / span 2;
+  text-align: right;
+  font-size: 3em;
+  border-right: solid;
+}
+
+#navbar-bottom-left-bottom {
+  grid-column: 1;
+  grid-row: 8 / span 2;
+  text-align: right;
+  font-size: 2.3em;
+  border-right: solid;
+}
+
+#navbar-bottom-middle-top {
+  grid-column: 2;
+  grid-row: 6 / span 2;
+  border-left: solid;
+}
+
+#navbar-bottom-middle-bottom {
+  grid-column: 2;
+  grid-row: 8 / span 2;
+  border-left: solid;
+}
+
+/* ------ NAVIGATION BAR TEXT ORIENTATION ------ */
+
+.navbar-text-left {
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+
+  /* user suggestion to remove rotate transformation? */
+}
+
+.navbar-text-right {
+  writing-mode: vertical-lr;
+}
+
+/* ------ NAVIGATION BAR COLOR CLASSES ------ */
+
+.navbar-top-x-top-color {
+  color: blue;
+}
+
+.navbar-top-x-bottom-color {
+  color: red;
+}
+
+.navbar-middle-x-color {
+  color: orange;
+}
+
+.navbar-bottom-x-top-color {
+  color: green;
+}
+
+.navbar-bottom-x-bottom-color {
+  color: yellow;
+}
+
+.navbar-middle-line-color-clicked {
+  background: linear-gradient(to top right, transparent calc(47% - 1px), orange, transparent calc(53% + 1px))
+}
+
+.navbar-middle-line-color {
+  background: linear-gradient(to top right, transparent calc(48.5% - 1px), white, transparent calc(51.5% + 1px))
+}
+
+/* ------ NAVGIGATION BAR TEXT TRANSITION CLASSES ------ */
+
+.navbar-text-right, .navbar-text-left {
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+/* ------ OPACITY CLASS (FOR NAVIGATION BAR, SECTION PAGES AND WITHIN SECTIONS) ------ */
+
+.zero-opacity {
+  opacity: 0;
+}
+
+/* ------ MAIN GRID ITEM POSITION CLASSES ------ */
+
+.pos-navbar-to-left {
+  left: -200%;
+}
+
+.pos-navbar-to-right {
+  left: 200%;
+}
+
+.pos-screen-left-to-right {
+  left: 50%;
+}
+
+.pos-screen-right-to-left {
+  left: -50%;
+}
+
+.pos-original-position {
+  left: 0%;
+}
+
+/* ------ 'N' ANIMATION CLASSES ------ */
+
+.animation-bottom {
+  animation-name: animation-bottom;
+  animation-duration: 2s;
+  position: relative;
+}
+
+@keyframes animation-bottom {
+  0%    {bottom: -55em;}
+  100%  {bottom: 0em;}
+}
+
+.animation-top {
+  animation-name: animation-top;
+  animation-duration: 2s;
+  position: relative;
+}
+
+@keyframes animation-top {
+  0%  {bottom: 55em;}
+  100%  {bottom: 0em;}
+}
+
+.animation-middle {
+  animation-name: animation-middle;
+  animation-duration: 0.5s;
+  animation-delay: 2.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animation-middle {
+  0%    {opacity: 0;}
+  100%  {opacity: 1;}
+}
+
+.animation-gaps {
+  animation-name: animation-gaps;
+  animation-duration: 0.5s;
+  animation-delay: 2.5s;
+  grid-row-gap: 0em;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animation-gaps {
+  0%    {grid-row-gap: 0em;}
+  100%  {grid-row-gap: 0.4em;}
+}
+
+/* ------ SECTION CLASSES ------ */
+
+.section-pages {
+  width: 100%;
+  height: 100%;
+  transition-property: opacity;
+  transition-duration: 2s;
+}
+
+.visualart {
+  background-color: blue;
+}
+
+.tech {
+  background-color: red;
+}
+
+.music {
+  background-color: green;
+}
+
+.fitness {
+  background-color: yellow;
+}
+
+/* ------ DISPLAY CLASSES (FOR SECTIONS AND WITHIN SECTIONS) ------ */
+
+.display {
+  display: grid;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+/* ------ ABOUT ME ------ */
+
+#about-me-left {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 0em;
+}
+
+.about-me-left-item, .about-me-right-item {
+  position: relative;
+  transition-property: top;
+  transition-duration: 1s;
+}
+
+#about-me-left-top-left {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 4;
+  padding-right: 2em;
+}
+
+#about-me-left-top-right {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 4;
+  background-image: url(images/aboutme.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+#about-me-left-bottom-left {
+  grid-column: 1 / span 2;
+  grid-row: 4 / span 5;
+}
+
+#about-me-left-bottom-right {
+  grid-column: 2 / span 2;
+  grid-row: 5 / span 4;
+  text-align: center;
+}
+
+#about-me-right {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 0.4em;
+}
+
+#about-me-right-top {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#about-me-right-middle {
+  grid-column: 1 / span 3;
+  grid-row: 2 / span 4;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
+#about-me-right-bottom {
+  grid-column: 1 / span 3;
+  grid-row: 6;
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+/* ------ ABOUT ME ELEMENTS ------ */
+
+.about-me-left-top-original-pos {
+  top: 50%;
+}
+
+.about-me-clicked-pos {
+  top: 0%;
+}
+
+.about-me-header-paras {
+  padding-top: 2em;
+  position: relative;
+  text-align: right;
+}
+
+.about-me-header {
+  font-size: 3em;
+  color: orange;
+}
+
+.about-me-header-underline {
+  text-decoration: underline;
+}
+
+.about-me-header-underline-overline {
+  text-decoration: underline overline;
+}
+
+#about-me-developer-header-para {
+  margin-top: 2em;
+}
+
+.icons {
+  position: absolute;
+  font-size: 2.4em;
+  bottom: 0px;
+  background-color: white;
+  padding: 0.25em 0.25em 0.25em 1em;
+  border-top-right-radius: 0.8em;
+  border-bottom-right-radius: 0.8em;
+  transition-property: left, opacity;
+  transition-duration: 1s;
+}
+
+.icons-original-pos {
+  left: -20vw;
+}
+
+.icons-clicked-pos {
+  left: 0px;
+}
+
+.fab {
+  margin-right: 0.3em;
+  color: orange;
+}
+
+.about-me-imgs, .about-me-texts {
+  width: 100%;
+  height: 100%;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
+.about-me-imgs {
+  margin-left: 1em;
+  background-size: auto 100%;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+#about-me-artist-img {
+  background-image: url(images/artist.jpeg);
+}
+
+/*
+Photo by <a href="https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sergey Zolkin</a> on <a href="/s/photos/computer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+*/
+
+#about-me-developer-img {
+  background-image: url(images/sergey-zolkin-developer.jpeg);
+}
+
+/*
+Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Clique Images</a> on <a href="/s/photos/fitness?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+*/
+
+#about-me-fitness-img {
+  background-image: url(images/clique-images-fitness.jpeg);
+}
+
+.about-me-right-top-original-pos {
+  top: 100%;
+}
+
+#credits {
+  color: orange;
+  font-family: monospace;
+  font-weight: bold;
+  padding-right: 1em;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+
+#credits:hover{
+  opacity: 1;
+}
