@@ -316,7 +316,7 @@ document.querySelector('#about-me-fitness-header').addEventListener('mouseout', 
 
 document.querySelector('#about-me-developer-header').addEventListener('click', function(){
   aboutMeHeaderSelected = setAboutMeHeaderSelected('#about-me-developer-header', aboutMeHeaderSelected);
-  toggleClickAboutMeHeader('#about-me-developer-header');
+  toggleClickAboutMeHeader('#about-me-developer-header-top');
   moveAboutMeTop();
   toggleAboutMeBottomVisibility('.about-me-developer');
   toggleIconsVisibility('#developer-icons');
@@ -324,7 +324,7 @@ document.querySelector('#about-me-developer-header').addEventListener('click', f
 
 document.querySelector('#about-me-artist-header').addEventListener('click', function(){
   aboutMeHeaderSelected = setAboutMeHeaderSelected('#about-me-artist-header', aboutMeHeaderSelected);
-  toggleClickAboutMeHeader('#about-me-artist-header');
+  toggleClickAboutMeHeader('#about-me-artist-header-top');
   moveAboutMeTop();
   toggleAboutMeBottomVisibility('.about-me-artist');
   toggleIconsVisibility('#artist-icons');
@@ -332,14 +332,14 @@ document.querySelector('#about-me-artist-header').addEventListener('click', func
 
 document.querySelector('#about-me-fitness-header').addEventListener('click', function(){
   aboutMeHeaderSelected = setAboutMeHeaderSelected('#about-me-fitness-header', aboutMeHeaderSelected);
-  toggleClickAboutMeHeader('#about-me-fitness-header');
+  toggleClickAboutMeHeader('#about-me-fitness-header-top');
   moveAboutMeTop();
   toggleAboutMeBottomVisibility('.about-me-fitness');
   toggleIconsVisibility('#fitness-icons');
 });
 
 function toggleHoverAboutMeHeader(header) {
-  document.querySelector(header).classList.toggle('about-me-header-underline');
+  document.querySelector(header).classList.toggle('about-me-header-coloured');
 }
 
 function setAboutMeHeaderSelected(callerAboutMeHeader, aboutMeHeaderSelected) {
@@ -352,12 +352,12 @@ function setAboutMeHeaderSelected(callerAboutMeHeader, aboutMeHeaderSelected) {
 }
 
 function toggleClickAboutMeHeader(header) {
-  document.querySelector(header).classList.toggle('about-me-header-underline-overline');
+  document.querySelector(header).classList.toggle('about-me-header-top-border-clicked');
 }
 
 function deselectAboutMeHeader(header) {
-  document.querySelector(header).classList.toggle('about-me-header-underline-overline');
-  document.querySelector(header).classList.toggle('about-me-header-underline');
+  document.querySelector(header + '-top').classList.toggle('about-me-header-top-border-clicked');
+  document.querySelector(header).classList.toggle('about-me-header-coloured');
 }
 
 const aboutMeTopRight = document.querySelector('#about-me-left-top-right');
@@ -418,19 +418,19 @@ function toggleIconsVisibility(icons) {
 
 let contactMeSelected = false;
 
-document.querySelector('#about-me-right-top').addEventListener('mouseover', function(){
+document.querySelector('#about-me-contact-me-header').addEventListener('mouseover', function(){
   if (!contactMeSelected) {
     toggleHoverContactMeHeader();
   }
 });
 
-document.querySelector('#about-me-right-top').addEventListener('mouseout', function(){
+document.querySelector('#about-me-contact-me-header').addEventListener('mouseout', function(){
   if (!contactMeSelected) {
     toggleHoverContactMeHeader();
   }
 });
 
-document.querySelector('#about-me-right-top').addEventListener('click', function(){
+document.querySelector('#about-me-contact-me-header').addEventListener('click', function(){
   contactMeSelected = !contactMeSelected;
   toggleClickContactMeHeader();
   toggleContactFormVisibility();
@@ -438,12 +438,11 @@ document.querySelector('#about-me-right-top').addEventListener('click', function
 });
 
 function toggleHoverContactMeHeader() {
-  document.querySelector('#about-me-intro').classList.toggle('display-none');
-  document.querySelector('#about-me-contact-me').classList.toggle('display-none');
+  document.querySelector('#about-me-contact-me-header').classList.toggle('about-me-header-coloured');
 }
 
 function toggleClickContactMeHeader() {
-  document.querySelector('#about-me-contact-me').classList.toggle('about-me-header-underline-overline');
+  document.querySelector('#about-me-contact-me-header-top').classList.toggle('about-me-header-top-border-clicked');
 }
 
 function toggleContactFormVisibility() {
