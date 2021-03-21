@@ -2,7 +2,6 @@ BUGS
 
   - user mouse already over element when event listeners are activated (mouseout glitch)
   - scrollable during startup animation
-  - animation scalability (big screens show lines all the time)
 
 SUPPORT
 

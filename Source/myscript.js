@@ -453,3 +453,50 @@ function moveContactMe() {
   document.querySelector('#about-me-right-top').classList.toggle('about-me-right-top-original-pos');
   document.querySelector('#about-me-right-top').classList.toggle('about-me-clicked-pos');
 }
+
+document.querySelector('#topic-form-next-button').addEventListener('click', function(){
+  toggleFormVisibility('#topic-form');
+  toggleFormVisibility('#message-form');
+  extendProgressBar('#progress-bar-one');
+});
+
+document.querySelector('#message-form-back-button').addEventListener('click', function(){
+  toggleFormVisibility('#message-form');
+  toggleFormVisibility('#topic-form');
+  extendProgressBar('#progress-bar-one');
+});
+
+document.querySelector('#message-form-next-button').addEventListener('click', function(){
+  toggleFormVisibility('#message-form');
+  toggleFormVisibility('#details-form');
+  extendProgressBar('#progress-bar-two');
+});
+
+document.querySelector('#details-form-back-button').addEventListener('click', function(){
+  toggleFormVisibility('#details-form');
+  toggleFormVisibility('#message-form');
+  extendProgressBar('#progress-bar-two');
+});
+
+document.querySelector('#details-form-submit-button').addEventListener('click', function(){
+  toggleFormVisibility('#details-form');
+  toggleFormVisibility('#submitted-page');
+  extendProgressBar('#progress-bar-three');
+  setTimeout(function() {
+    toggleFormVisibility('#submitted-page');
+    toggleFormVisibility('#topic-form');
+    extendProgressBar('#progress-bar-three');
+    extendProgressBar('#progress-bar-two');
+    extendProgressBar('#progress-bar-one');
+  }, 3000);
+});
+
+function toggleFormVisibility(form) {
+  document.querySelector(form).classList.toggle('display-none');
+  document.querySelector(form).clientWidth;
+  document.querySelector(form).classList.toggle('zero-opacity');
+}
+
+function extendProgressBar(progressBar) {
+  document.querySelector(progressBar).classList.toggle('form-progress-bar-complete');
+}

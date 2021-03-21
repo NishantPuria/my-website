@@ -309,6 +309,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
   grid-gap: 0em;
+  background-color: rgba(111, 138, 121, 0.9);
 }
 
 .about-me-left-item, .about-me-right-item {
@@ -346,7 +347,8 @@ body {
 #about-me-right {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  grid-gap: 0.4em;
+  grid-gap: 0em;
+  background-color: rgba(111, 138, 121, 0.9);
 }
 
 #about-me-right-top {
@@ -354,26 +356,31 @@ body {
   grid-row: 1 / span 2;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 #about-me-right-middle {
   grid-column: 1 / span 3;
-  grid-row: 2 / span 4;
+  grid-row: 3 / span 3;
   transition-property: opacity;
   transition-duration: 1s;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
 }
 
 #about-me-right-bottom {
   grid-column: 1 / span 3;
-  grid-row: 6;
-  display: flex;
-  align-items: flex-end;
-  text-align: right;
-  justify-content: flex-end;
+  grid-row: 5 / span 2;
+  position: relative;
+  text-align: center;
 }
 
 /* ------ ABOUT ME ELEMENTS ------ */
+
+a {
+  text-decoration: none;
+}
 
 .about-me-left-top-original-pos {
   top: 50%;
@@ -432,6 +439,9 @@ body {
   border-bottom-right-radius: 0.8em;
   transition-property: left, opacity;
   transition-duration: 1s;
+/*  border-top: solid orange;
+  border-right: solid orange;
+  border-bottom: solid orange; */
 }
 
 .icons-original-pos {
@@ -442,12 +452,12 @@ body {
   left: 0px;
 }
 
-.fab {
+.fab, .fas {
   margin-right: 0.3em;
   color: orange;
 }
 
-.fab:hover {
+.fab:hover, .fas:hover {
   color: brown;
 }
 
@@ -489,14 +499,16 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
 }
 
 #about-me-contact-me-header {
-  font-size: 1.5em;
+  font-size: 1.75em;
 }
 
 #credits {
   color: orange;
   font-family: monospace;
   font-weight: bold;
-  padding-right: 1em;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
   opacity: 0;
   transition-property: opacity;
   transition-duration: 0.3s;
@@ -504,4 +516,188 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
 
 #credits:hover{
   opacity: 1;
+}
+
+#form-container {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  margin-top: -2%;
+}
+
+.contact-me-forms {
+  transition-property: opacity;
+  transition-duration: 1s;
+  text-align: center;
+}
+
+.form-elements {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#topic-form-select-label {
+  display: block;
+  font-size: 2em;
+  color: orange;
+}
+
+#topic-form-select {
+  display: block;
+  font-size: 1.5em;
+  padding: 0.2em;
+  margin-top: 1em;
+  color: orange;
+  border: solid orange;
+  border-radius: 1.2em;
+  background-color: transparent;
+}
+
+#topic-form-next-button {
+  display: block;
+  font-size: 1.5em;
+  padding: 0.2em;
+  margin-top: 2.5em;
+  border-radius: 1.2em;
+  color: orange;
+  border: solid orange;
+}
+
+#message-textarea {
+  display: block;
+  color: orange;
+  resize: none;
+  background-color: transparent;
+  padding: 0.5em;
+  border: solid orange;
+  border-radius: 1em;
+  font-size: 1.5em;
+  height: 5em;
+  width: 75%;
+}
+
+#message-form-next-button {
+  display: inline-block;
+  margin-top: 2.5em;
+  font-size: 1.5em;
+  padding: 0.2em;
+  border-radius: 1.2em;
+  color: orange;
+  border: solid orange;
+}
+
+#message-form-back-button {
+  display: inline-block;
+  margin-top: 2.5em;
+  margin-right: 1em;
+  font-size: 1.5em;
+  padding: 0.2em;
+  border-radius: 1.2em;
+  color: orange;
+  border: solid orange;
+}
+
+#details-form-first-name {
+  display: inline-block;
+  color: orange;
+  margin-right: 1em;
+  background-color: transparent;
+  padding: 0.5em;
+  border: solid orange;
+  border-radius: 1em;
+  font-size: 1.5em;
+}
+
+#details-form-last-name {
+  display: inline-block;
+  color: orange;
+  background-color: transparent;
+  padding: 0.5em;
+  border: solid orange;
+  border-radius: 1em;
+  font-size: 1.5em;
+}
+
+#details-form-email {
+  display: block;
+  margin-top: 1em;
+  color: orange;
+  background-color: transparent;
+  padding: 0.5em;
+  border: solid orange;
+  border-radius: 1em;
+  font-size: 1.5em;
+}
+
+#details-form-back-button {
+  display: inline-block;
+  margin-top: 2.5em;
+  margin-right: 1em;
+  font-size: 1.5em;
+  padding: 0.2em;
+  border-radius: 1.2em;
+  color: orange;
+  border: solid orange;
+}
+
+#details-form-submit-button {
+  display: inline-block;
+  margin-top: 2.5em;
+  margin-right: 1em;
+  font-size: 1.5em;
+  padding: 0.2em;
+  border-radius: 1.2em;
+  color: orange;
+  border: solid orange;
+}
+
+#submitted-page {
+  padding-top: 5em;
+  color: orange;
+  background-color: transparent;
+  font-size: 1.5em;
+}
+
+#form-progress-bar-container {
+  grid-column: 1;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  margin-top: -5%;
+}
+
+.form-progress-bar-item {
+  border-top: solid orange;
+  width: 0%;
+  transition-property: width;
+  transition-duration: 1s;
+}
+
+#progress-bar-one {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#progress-bar-two {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#progress-bar-three {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.form-progress-bar-complete {
+  width: 100%;
+}
+
+.contact-me-direct {
+  display: block;
+  margin-top: 1em;
+  font-size: 1.25em;
+}
+
+#contact-me-email {
+  margin-top: 4em;
 }
