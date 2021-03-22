@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title> Nishant Parshurampuria </title>
@@ -70,7 +71,7 @@
 
             <div class = "about-me-header-paras">
               <span class = "icons icons-original-pos zero-opacity" id = "artist-icons">
-                <a href = "https://www.instagram.com/nishu.music/" target = "_blank"> <i class="fab fa-instagram"></i> </a>
+                <a href = "https://www.instagram.com/nishu.music/" target = "_blank"> <i class="fab fa-instagram-square"></i> </a>
                 <a href = "https://vm.tiktok.com/Tr4RX6/" target = "_blank"> <i class="fab fa-tiktok"></i> </a>
                 <a href = "https://www.youtube.com/channel/UCpOMt3Y4jLztpInrkAY3Pqw" target = "_blank"> <i class="fab fa-youtube"></i> </a>
                 <a href = "https://open.spotify.com/artist/1RRzzoP1XfymooR4amIYDH?si=JBPqh_p_QsCT46iRNrE1Ow" target = "_blank"> <i class="fab fa-spotify"></i> </a>
@@ -131,27 +132,28 @@
             <div id = "form-container">
               <form id = "topic-form" class = "contact-me-forms">
                 <label id = "topic-form-select-label" class = "form-elements" for = "topic-form-select"> What would you like to discuss? </label>
-                <select id = "topic-form-select" class = "form-elements" name = "topic-form-select">
-                  <option value = "select-topic" selected> Select Topic </option>
+                <select id = "topic-form-select" class = "form-elements validatable" name = "topic-form-select">
+                  <option value = "" selected> Select Topic </option>
                   <option value = "music"> Music </option>
                   <option value = "visual-art"> Visual Art </option>
                   <option value = "tech"> Tech </option>
                   <option value = "fitness"> Fitness </option>
+                  <option value = "feedback"> Feedback </option>
                   <option value = "other"> Other </option>
                 </select>
-                <input id = "topic-form-next-button" class = "form-elements" type = "button" value = "Next">
+                <input id = "topic-form-next-button" class = "form-elements form-buttons" type = "button" value = "Next">
               </form>
               <form id = "message-form" class = "contact-me-forms display-none zero-opacity">
-                <textarea id = "message-textarea" class = "form-elements" name = "message-textarea" placeholder = "Your Message"></textarea>
-                <input id = "message-form-back-button" class = "form-elements" type = "button" value = "Back">
-                <input id = "message-form-next-button" class = "form-elements" type = "button" value = "Next">
+                <textarea id = "message-textarea" class = "form-elements validatable" name = "message-textarea" placeholder = "Your Message" maxlength = "600"></textarea>
+                <input id = "message-form-back-button" class = "form-elements form-buttons" type = "button" value = "Back">
+                <input id = "message-form-next-button" class = "form-elements form-buttons" type = "button" value = "Next">
               </form>
               <form id = "details-form" class = "contact-me-forms display-none zero-opacity">
-                <input id = "details-form-first-name" class = "form-elements" type = "text" placeholder = "First Name">
-                <input id = "details-form-last-name" class = "form-elements" type = "text" placeholder = "Last Name">
-                <input id = "details-form-email" class = "form-elements" type = "email" placeholder = "Email Address">
-                <input id = "details-form-back-button" class = "form-elements" type = "button" value = "Back">
-                <input id = "details-form-submit-button" class = "form-elements" type = "button" value = "Submit">
+                <input id = "details-form-first-name" class = "form-elements validatable" type = "text" placeholder = "First Name">
+                <input id = "details-form-last-name" class = "form-elements validatable" type = "text" placeholder = "Last Name">
+                <input id = "details-form-email" class = "form-elements validatable" type = "email" placeholder = "Email Address">
+                <input id = "details-form-back-button" class = "form-elements form-buttons" type = "button" value = "Back">
+                <input id = "details-form-submit-button" class = "form-elements form-buttons" type = "button" value = "Submit">
               </form>
               <div id = "submitted-page" class = "contact-me-forms display-none zero-opacity">
                 Thanks for your message! I'll get back to you soon.
@@ -168,16 +170,16 @@
 
           <div class = "about-me-right-item" id = "about-me-right-bottom">
             <span class = "contact-me-direct" id = "contact-me-email">
-              <a href> <i class="fas fa-envelope"></i> </a>
-              nishant.parshurampuria@gmail.com
+              <i class="fas fa-envelope"></i>
+              <span id = "contact-me-email-text"> nishant.parshurampuria@gmail.com </span>
             </span>
             <span class = "contact-me-direct" id = "contact-me-phone">
-              <a href> <i class="fas fa-phone-alt"></i> </a>
-              +447756721150
+              <i class="fas fa-phone-alt"></i>
+              <span id = "contact-me-phone-text"> +447756721150 </span>
             </span>
             <span class = "contact-me-direct" id = "contact-me-location">
-              <a href> <i class="fas fa-map-marker-alt"></i> </a>
-              Robijnlaan 26A, 3090 Overijse, Belgium
+              <i class="fas fa-map-marker-alt"></i>
+              <span id = "contact-me-location-text"> Robijnlaan 26A, 3090 Overijse, Belgium </span>
             </span>
             <p id = "credits"> Website Designed, Coded and Maintained by Nishant Parshurampuria </p>
           </div>

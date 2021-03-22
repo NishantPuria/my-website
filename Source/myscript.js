@@ -455,9 +455,12 @@ function moveContactMe() {
 }
 
 document.querySelector('#topic-form-next-button').addEventListener('click', function(){
-  toggleFormVisibility('#topic-form');
-  toggleFormVisibility('#message-form');
-  extendProgressBar('#progress-bar-one');
+  if (validateInput('#topic-form')) {
+    toggleFormVisibility('#topic-form');
+    toggleFormVisibility('#message-form');
+    extendProgressBar('#progress-bar-one');
+  }
+  else displayAlert('#topic-form-next-button');
 });
 
 document.querySelector('#message-form-back-button').addEventListener('click', function(){
@@ -467,9 +470,12 @@ document.querySelector('#message-form-back-button').addEventListener('click', fu
 });
 
 document.querySelector('#message-form-next-button').addEventListener('click', function(){
-  toggleFormVisibility('#message-form');
-  toggleFormVisibility('#details-form');
-  extendProgressBar('#progress-bar-two');
+  if (validateInput('#message-form')) {
+    toggleFormVisibility('#message-form');
+    toggleFormVisibility('#details-form');
+    extendProgressBar('#progress-bar-two');
+  }
+  else displayAlert('#message-form-next-button');
 });
 
 document.querySelector('#details-form-back-button').addEventListener('click', function(){
@@ -479,17 +485,54 @@ document.querySelector('#details-form-back-button').addEventListener('click', fu
 });
 
 document.querySelector('#details-form-submit-button').addEventListener('click', function(){
-  toggleFormVisibility('#details-form');
-  toggleFormVisibility('#submitted-page');
-  extendProgressBar('#progress-bar-three');
-  setTimeout(function() {
-    toggleFormVisibility('#submitted-page');
-    toggleFormVisibility('#topic-form');
-    extendProgressBar('#progress-bar-three');
-    extendProgressBar('#progress-bar-two');
-    extendProgressBar('#progress-bar-one');
-  }, 3000);
+  if (validateInput('#details-form')) {
+    if (validateEmail('#details-form-email')) {
+      toggleFormVisibility('#details-form');
+      toggleFormVisibility('#submitted-page');
+      extendProgressBar('#progress-bar-three');
+      resetAllValues();
+      setTimeout(function() {
+        toggleFormVisibility('#submitted-page');
+        toggleFormVisibility('#topic-form');
+        extendProgressBar('#progress-bar-three');
+        extendProgressBar('#progress-bar-two');
+        extendProgressBar('#progress-bar-one');
+      }, 3000);
+    }
+    else displayAlert('#details-form-submit-button');
+  }
+  else displayAlert('#details-form-submit-button');
 });
+
+function validateInput(form) {
+  let checker = true;
+  document.querySelector(form).querySelectorAll('.validatable').forEach((input) => {
+    if (input.value == '') checker = false;
+  });
+  return checker;
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.querySelector(email).value);
+}
+
+function displayAlert(button) {
+  document.querySelector(button).disabled = !document.querySelector(button).disabled;
+  document.querySelector(button).classList.toggle('no-text-decoration');
+  let originalValue = document.querySelector(button).value;
+  document.querySelector(button).value = 'Please complete all fields!';
+  setTimeout(function() {
+    document.querySelector(button).value = originalValue;
+    document.querySelector(button).classList.toggle('no-text-decoration');
+    document.querySelector(button).disabled = !document.querySelector(button).disabled;
+  }, 1500);
+}
+
+function resetAllValues() {
+  document.querySelector('#form-container').querySelectorAll('.validatable').forEach((input) => {
+    input.value = '';
+  });
+}
 
 function toggleFormVisibility(form) {
   document.querySelector(form).classList.toggle('display-none');
@@ -499,4 +542,65 @@ function toggleFormVisibility(form) {
 
 function extendProgressBar(progressBar) {
   document.querySelector(progressBar).classList.toggle('form-progress-bar-complete');
+}
+
+document.querySelector('#contact-me-email').addEventListener('mouseover', function() {
+  toggleHoverContactDetail('#contact-me-email');
+});
+
+document.querySelector('#contact-me-email').addEventListener('mouseout', function() {
+  toggleHoverContactDetail('#contact-me-email');
+});
+
+document.querySelector('#contact-me-phone').addEventListener('mouseover', function() {
+  toggleHoverContactDetail('#contact-me-phone');
+});
+
+document.querySelector('#contact-me-phone').addEventListener('mouseout', function() {
+  toggleHoverContactDetail('#contact-me-phone');
+});
+
+document.querySelector('#contact-me-location').addEventListener('mouseover', function() {
+  toggleHoverContactDetail('#contact-me-location');
+});
+
+document.querySelector('#contact-me-location').addEventListener('mouseout', function() {
+  toggleHoverContactDetail('#contact-me-location');
+});
+
+document.querySelector('#contact-me-email').addEventListener('click', function(){
+  window.location.href = 'mailto:nishant.parshurampuria@gmail.com';
+});
+
+document.querySelector('#contact-me-phone').addEventListener('click', function(){
+  copyText('#contact-me-phone-text');
+  showCopied('#contact-me-phone-text');
+});
+
+document.querySelector('#contact-me-location').addEventListener('click', function(){
+  copyText('#contact-me-location-text');
+  showCopied('#contact-me-location-text');
+});
+
+function toggleHoverContactDetail(contactMeDetail) {
+  Array.from(document.querySelector(contactMeDetail).children).forEach((child) => {
+    child.classList.toggle('contact-me-detail-hovered');
+  });
+}
+
+function copyText(contactMeDetail) {
+  let textArea = document.createElement('textarea');
+  textArea.value = document.querySelector(contactMeDetail).innerText;
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textArea);
+}
+
+function showCopied(contactMeDetail) {
+  let originalText = document.querySelector(contactMeDetail).innerText
+  document.querySelector(contactMeDetail).innerText = 'Copied!';
+  setTimeout(function() {
+    document.querySelector(contactMeDetail).innerText = originalText;
+  }, 1000);
 }

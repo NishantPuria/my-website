@@ -11,8 +11,8 @@ body {
 
 #main-grid-container {
   display: grid;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: 1fr;
 }
@@ -160,7 +160,7 @@ body {
 }
 
 .navbar-middle-x-color {
-  color: orange;
+  color: #70A288;
 }
 
 .navbar-bottom-x-top-color {
@@ -172,11 +172,11 @@ body {
 }
 
 .navbar-middle-line-color-clicked {
-  background: linear-gradient(to top right, transparent calc(47% - 1px), orange, transparent calc(53% + 1px))
+  background: linear-gradient(to top right, transparent calc(47% - 1px), #70A288, transparent calc(53% + 1px));
 }
 
 .navbar-middle-line-color {
-  background: linear-gradient(to top right, transparent calc(48.5% - 1px), white, transparent calc(51.5% + 1px))
+  background: linear-gradient(to top right, transparent calc(48.5% - 1px), white, transparent calc(51.5% + 1px));
 }
 
 /* ------ NAVGIGATION BAR TEXT TRANSITION CLASSES ------ */
@@ -303,13 +303,17 @@ body {
   display: block;
 }
 
+.display-inline-block {
+  display: inline-block;
+}
+
 /* ------ ABOUT ME ------ */
 
 #about-me-left {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
   grid-gap: 0em;
-  background-color: rgba(111, 138, 121, 0.9);
+  background-color: #08415C;
 }
 
 .about-me-left-item, .about-me-right-item {
@@ -348,7 +352,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
   grid-gap: 0em;
-  background-color: rgba(111, 138, 121, 0.9);
+  background-color: #08415C;
 }
 
 #about-me-right-top {
@@ -399,7 +403,7 @@ a {
 .about-me-header {
   position: relative;
   font-size: 3em;
-  color: orange;
+  color: #70A288;
   transition-property: color;
   transition-duration: 0.1s;
 }
@@ -407,6 +411,10 @@ a {
 .about-me-header-coloured {
   color: white;
   text-decoration: underline;
+}
+
+#about-me-intro {
+  color: white;
 }
 
 #about-me-developer-header-para {
@@ -421,7 +429,7 @@ a {
   width: 0px;
   border-bottom: solid 0.1em;
   transition: 1s;
-  color: orange;
+  color: #70A288;
 }
 
 .about-me-header-top-border-clicked {
@@ -439,9 +447,9 @@ a {
   border-bottom-right-radius: 0.8em;
   transition-property: left, opacity;
   transition-duration: 1s;
-/*  border-top: solid orange;
-  border-right: solid orange;
-  border-bottom: solid orange; */
+/*  border-top: solid #70A288;
+  border-right: solid #70A288;
+  border-bottom: solid #70A288; */
 }
 
 .icons-original-pos {
@@ -454,11 +462,11 @@ a {
 
 .fab, .fas {
   margin-right: 0.3em;
-  color: orange;
+  color: #70A288;
 }
 
-.fab:hover, .fas:hover {
-  color: brown;
+.fab:hover {
+  color: #A9714B;
 }
 
 .about-me-imgs, .about-me-texts {
@@ -503,7 +511,7 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
 }
 
 #credits {
-  color: orange;
+  color: white;
   font-family: monospace;
   font-weight: bold;
   position: absolute;
@@ -538,7 +546,7 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
 #topic-form-select-label {
   display: block;
   font-size: 2em;
-  color: orange;
+  color: #70A288;
 }
 
 #topic-form-select {
@@ -546,8 +554,8 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   font-size: 1.5em;
   padding: 0.2em;
   margin-top: 1em;
-  color: orange;
-  border: solid orange;
+  color: #70A288;
+  border: solid #70A288;
   border-radius: 1.2em;
   background-color: transparent;
 }
@@ -557,18 +565,15 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   font-size: 1.5em;
   padding: 0.2em;
   margin-top: 2.5em;
-  border-radius: 1.2em;
-  color: orange;
-  border: solid orange;
 }
 
 #message-textarea {
   display: block;
-  color: orange;
+  color: #70A288;
   resize: none;
   background-color: transparent;
   padding: 0.5em;
-  border: solid orange;
+  border: solid #70A288;
   border-radius: 1em;
   font-size: 1.5em;
   height: 5em;
@@ -581,8 +586,6 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   font-size: 1.5em;
   padding: 0.2em;
   border-radius: 1.2em;
-  color: orange;
-  border: solid orange;
 }
 
 #message-form-back-button {
@@ -592,27 +595,25 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   font-size: 1.5em;
   padding: 0.2em;
   border-radius: 1.2em;
-  color: orange;
-  border: solid orange;
 }
 
 #details-form-first-name {
   display: inline-block;
-  color: orange;
+  color: #70A288;
   margin-right: 1em;
   background-color: transparent;
   padding: 0.5em;
-  border: solid orange;
+  border: solid #70A288;
   border-radius: 1em;
   font-size: 1.5em;
 }
 
 #details-form-last-name {
   display: inline-block;
-  color: orange;
+  color: #70A288;
   background-color: transparent;
   padding: 0.5em;
-  border: solid orange;
+  border: solid #70A288;
   border-radius: 1em;
   font-size: 1.5em;
 }
@@ -620,10 +621,10 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
 #details-form-email {
   display: block;
   margin-top: 1em;
-  color: orange;
+  color: #70A288;
   background-color: transparent;
   padding: 0.5em;
-  border: solid orange;
+  border: solid #70A288;
   border-radius: 1em;
   font-size: 1.5em;
 }
@@ -635,8 +636,6 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   font-size: 1.5em;
   padding: 0.2em;
   border-radius: 1.2em;
-  color: orange;
-  border: solid orange;
 }
 
 #details-form-submit-button {
@@ -646,15 +645,24 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   font-size: 1.5em;
   padding: 0.2em;
   border-radius: 1.2em;
-  color: orange;
-  border: solid orange;
 }
 
 #submitted-page {
   padding-top: 5em;
-  color: orange;
+  color: #70A288;
   background-color: transparent;
   font-size: 1.5em;
+}
+
+.form-buttons {
+  color: #70A288;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline overline;
+}
+
+.form-buttons:hover {
+  color: white;
 }
 
 #form-progress-bar-container {
@@ -667,7 +675,7 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
 }
 
 .form-progress-bar-item {
-  border-top: solid orange;
+  border-top: solid #70A288;
   width: 0%;
   transition-property: width;
   transition-duration: 1s;
@@ -700,4 +708,12 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
 
 #contact-me-email {
   margin-top: 4em;
+}
+
+.contact-me-detail-hovered {
+  color: #A9714B;
+}
+
+.no-text-decoration {
+  text-decoration: none;
 }
