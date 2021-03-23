@@ -25,12 +25,12 @@ body {
   transition-duration: 2s;
 }
 
-#left {
+#main-grid-left {
   grid-column: 1 / span 4;
   grid-row: 1;
 }
 
-#navbar {
+#main-grid-navbar {
   grid-column: 5 / span 2;
   grid-row: 1;
   display: grid;
@@ -38,7 +38,7 @@ body {
   grid-template-rows: repeat(9, 1fr);
 }
 
-#right {
+#main-grid-right {
   grid-column: 7 / span 4;
   grid-row: 1;
 }
@@ -141,8 +141,6 @@ body {
 .navbar-text-left {
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
-
-  /* user suggestion to remove rotate transformation? */
 }
 
 .navbar-text-right {
@@ -151,23 +149,23 @@ body {
 
 /* ------ NAVIGATION BAR COLOR CLASSES ------ */
 
-.navbar-top-x-top-color {
+.navbar-top-top-color {
   color: blue;
 }
 
-.navbar-top-x-bottom-color {
+.navbar-top-bottom-color {
   color: red;
 }
 
-.navbar-middle-x-color {
+.navbar-middle-color {
   color: #70A288;
 }
 
-.navbar-bottom-x-top-color {
+.navbar-bottom-top-color {
   color: green;
 }
 
-.navbar-bottom-x-bottom-color {
+.navbar-bottom-bottom-color {
   color: yellow;
 }
 
@@ -186,31 +184,31 @@ body {
   transition-duration: 0.3s;
 }
 
-/* ------ OPACITY CLASS (FOR NAVIGATION BAR, SECTION PAGES AND WITHIN SECTIONS) ------ */
+/* ------ OPACITY CLASS (FOR NAVIGATION BAR, MAIN SECTIONS AND WITHIN SECTIONS) ------ */
 
-.zero-opacity {
+.opacity-zero {
   opacity: 0;
 }
 
 /* ------ MAIN GRID ITEM POSITION CLASSES ------ */
 
-.pos-navbar-to-left {
+.minus-two-hundred-percent-from-left-position {
   left: -200%;
 }
 
-.pos-navbar-to-right {
+.two-hundred-percent-from-left-position {
   left: 200%;
 }
 
-.pos-screen-left-to-right {
+.fifty-percent-from-left-position {
   left: 50%;
 }
 
-.pos-screen-right-to-left {
+.minus-fifty-percent-from-left-position {
   left: -50%;
 }
 
-.pos-original-position {
+.zero-percent-from-left-position {
   left: 0%;
 }
 
@@ -264,16 +262,16 @@ body {
   100%  {grid-row-gap: 0.4em;}
 }
 
-/* ------ SECTION CLASSES ------ */
+/* ------ MAIN SECTION CLASSES ------ */
 
-.section-pages {
+.main-section {
   width: 100%;
   height: 100%;
   transition-property: opacity;
   transition-duration: 2s;
 }
 
-.visualart {
+.visual-art {
   background-color: blue;
 }
 
@@ -289,9 +287,9 @@ body {
   background-color: yellow;
 }
 
-/* ------ DISPLAY CLASSES (FOR SECTIONS AND WITHIN SECTIONS) ------ */
+/* ------ DISPLAY CLASSES (FOR MAIN SECTIONS AND WITHIN SECTIONS) ------ */
 
-.display {
+.display-grid {
   display: grid;
 }
 
@@ -386,15 +384,15 @@ a {
   text-decoration: none;
 }
 
-.about-me-left-top-original-pos {
+.fifty-percent-from-top-position {
   top: 50%;
 }
 
-.about-me-clicked-pos {
+.zero-percent-from-top-position {
   top: 0%;
 }
 
-.about-me-header-paras {
+.about-me-header-container {
   padding-top: 2em;
   position: relative;
   text-align: right;
@@ -408,20 +406,21 @@ a {
   transition-duration: 0.1s;
 }
 
-.about-me-header-coloured {
+.about-me-header-hovered {
   color: white;
   text-decoration: underline;
 }
 
-#about-me-intro {
+#about-me-intro-header {
   color: white;
+  display: inline-block;
 }
 
-#about-me-developer-header-para {
+#about-me-developer-header-container {
   margin-top: 2em;
 }
 
-.about-me-header-top-border {
+.animated-top-border {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -432,7 +431,7 @@ a {
   color: #70A288;
 }
 
-.about-me-header-top-border-clicked {
+.animated-top-border-clicked {
   width: 100%;
   color: white;
 }
@@ -452,12 +451,8 @@ a {
   border-bottom: solid #70A288; */
 }
 
-.icons-original-pos {
+.minus-twenty-vw-from-left-position {
   left: -20vw;
-}
-
-.icons-clicked-pos {
-  left: 0px;
 }
 
 .fab, .fas {
@@ -469,20 +464,20 @@ a {
   color: #A9714B;
 }
 
-.about-me-imgs, .about-me-texts {
+.about-me-sub-image, .about-me-text {
   width: 100%;
   height: 100%;
   transition-property: opacity;
   transition-duration: 1s;
 }
 
-.about-me-imgs {
+.about-me-sub-image {
   background-size: auto 100%;
   background-position: left bottom;
   background-repeat: no-repeat;
 }
 
-#about-me-artist-img {
+#about-me-artist-image {
   background-image: url(images/artist.jpeg);
 }
 
@@ -490,7 +485,7 @@ a {
 Photo by <a href="https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sergey Zolkin</a> on <a href="/s/photos/computer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 */
 
-#about-me-developer-img {
+#about-me-developer-image {
   background-image: url(images/sergey-zolkin-developer.jpeg);
 }
 
@@ -498,16 +493,18 @@ Photo by <a href="https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=r
 Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Clique Images</a> on <a href="/s/photos/fitness?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 */
 
-#about-me-fitness-img {
+#about-me-fitness-image {
   background-image: url(images/clique-images-fitness.jpeg);
 }
 
-.about-me-right-top-original-pos {
+.hundred-percent-from-top-position {
   top: 100%;
 }
 
 #about-me-contact-me-header {
   font-size: 1.75em;
+  display: inline-block;
+  margin-left: 0.5em;
 }
 
 #credits {
@@ -532,13 +529,13 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   margin-top: -2%;
 }
 
-.contact-me-forms {
+.contact-me-form {
   transition-property: opacity;
   transition-duration: 1s;
   text-align: center;
 }
 
-.form-elements {
+.form-element {
   margin-left: auto;
   margin-right: auto;
 }
@@ -567,7 +564,7 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   margin-top: 2.5em;
 }
 
-#message-textarea {
+#message-form-textarea {
   display: block;
   color: #70A288;
   resize: none;
@@ -654,14 +651,14 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   font-size: 1.5em;
 }
 
-.form-buttons {
+.form-button {
   color: #70A288;
   border: none;
   background-color: transparent;
   text-decoration: underline overline;
 }
 
-.form-buttons:hover {
+.form-button:hover {
   color: white;
 }
 
@@ -700,20 +697,20 @@ Photo by <a href="https://unsplash.com/@cliqueimages?utm_source=unsplash&utm_med
   width: 100%;
 }
 
-.contact-me-direct {
+.contact-me-direct-container {
   display: block;
   margin-top: 1em;
   font-size: 1.25em;
 }
 
-#contact-me-email {
+#contact-me-email-container {
   margin-top: 4em;
 }
 
-.contact-me-detail-hovered {
+.contact-me-direct-hovered {
   color: #A9714B;
 }
 
-.no-text-decoration {
+.text-decoration-none {
   text-decoration: none;
 }

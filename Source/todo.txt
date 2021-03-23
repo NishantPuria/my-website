@@ -6,12 +6,15 @@ BUGS
 SUPPORT
 
   - form handling
-  
+
   - all main browsers
   - mobile browsers
   - different screen sizes
   - convert units to viewport units
 
+  - more layers of colour / opacity
   - images own
-  - doctype, meta, html convention code
-  - refactor all code
+
+  - refactor all code + commenting
+  - html meta tags
+  - css bg image alt
