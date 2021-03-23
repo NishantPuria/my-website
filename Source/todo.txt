@@ -8,13 +8,10 @@ SUPPORT
   - form handling
 
   - all main browsers
-  - mobile browsers
-  - different screen sizes
+  - different screen sizes + viewport meta
   - convert units to viewport units
 
   - more layers of colour / opacity
-  - images own
+  - images own + aria labels
 
   - refactor all code + commenting
-  - html meta tags
-  - css bg image alt

@@ -29,15 +29,15 @@ setTimeout(function() {
   document.querySelector('#navbar-middle-middle').addEventListener('mouseover', function() {
     if (mainTopicSelected != '#navbar-middle-middle') {
       setColor('#navbar-middle-middle', 'navbar-middle-color');
-      setOpacity('#navbar-middle-left');
-      setOpacity('#navbar-middle-right');
+      toggleOpacity('#navbar-middle-left');
+      toggleOpacity('#navbar-middle-right');
     }
   });
 
   document.querySelector('#navbar-middle-middle').addEventListener('mouseout', function() {
     if (mainTopicSelected != '#navbar-middle-middle') {
-      setOpacity('#navbar-middle-left');
-      setOpacity('#navbar-middle-right');
+      toggleOpacity('#navbar-middle-left');
+      toggleOpacity('#navbar-middle-right');
       setColor('#navbar-middle-middle', 'navbar-middle-color');
     }
   });
@@ -135,7 +135,7 @@ const mainSectionsRight = document.querySelector('#main-grid-right').children;
 
 function toggleNavbarTopicHover(navbarTopic, colorClass, navbarMiddlePart) {
   setColor(navbarMiddlePart, colorClass);
-  setOpacity(navbarTopic);
+  toggleOpacity(navbarTopic);
 }
 
 function setMainTopicSelected(callerNavbarTopic) {
@@ -157,8 +157,8 @@ function deselect(navbarTopic) {
       break;
     // MIDDLE DESELECTION
     case '#navbar-middle-middle':
-      setOpacity('#navbar-middle-left');
-      setOpacity('#navbar-middle-right');
+      toggleOpacity('#navbar-middle-left');
+      toggleOpacity('#navbar-middle-right');
       setColor('#navbar-text-middle-left', 'navbar-middle-color');
       setColor('#navbar-text-middle-right', 'navbar-middle-color');
       setColor('#navbar-middle-middle', 'navbar-middle-color');
@@ -177,7 +177,7 @@ function deselect(navbarTopic) {
 }
 
 function deselectTopic(navbarTopic, navbarTopicText, colorClass, navbarMiddlePart) {
-  setOpacity(navbarTopic);
+  toggleOpacity(navbarTopic);
   setColor(navbarTopicText, colorClass);
   setColor(navbarMiddlePart, colorClass);
 }
@@ -186,7 +186,7 @@ function setColor(element, colorClass) {
   document.querySelector(element).classList.toggle(colorClass);
 }
 
-function setOpacity(element) {
+function toggleOpacity(element) {
   document.querySelector(element).classList.toggle('opacity-zero');
 }
 
@@ -393,7 +393,7 @@ function toggleIconsVisibility(iconSet) {
     }
   }
   if (aboutMeHeaderSelected != '') {
-    setOpacity(iconSet);
+    toggleOpacity(iconSet);
     document.querySelector(iconSet).classList.toggle('minus-twenty-vw-from-left-position');
     document.querySelector(iconSet).classList.toggle('zero-percent-from-left-position');
   }
@@ -416,7 +416,7 @@ document.querySelector('#about-me-contact-me-header').addEventListener('mouseout
 document.querySelector('#about-me-contact-me-header').addEventListener('click', function() {
   contactMeHeaderSelected = !contactMeHeaderSelected;
   toggleAnimatedTopBorder('#about-me-contact-me-header-top');
-  setOpacity('#about-me-right-middle');
+  toggleOpacity('#about-me-right-middle');
   moveAboutMeRightTop();
 });
 
@@ -510,16 +510,16 @@ function resetAllInputValues() {
 }
 
 function toggleFormVisibility(form) {
-  setDisplayNone(form);
+  toggleDisplayNone(form);
   document.querySelector(form).clientWidth;
-  setOpacity(form);
+  toggleOpacity(form);
 }
 
 function toggleProgressBar(progressBarPart) {
   document.querySelector(progressBarPart).classList.toggle('form-progress-bar-complete');
 }
 
-function setDisplayNone(element) {
+function toggleDisplayNone(element) {
   document.querySelector(element).classList.toggle('display-none');
 }
 
