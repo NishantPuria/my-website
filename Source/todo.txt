@@ -6,12 +6,3 @@ BUGS
 SUPPORT
 
   - form handling
-
-  - all main browsers
-  - different screen sizes + viewport meta
-  - convert units to viewport units
-
-  - more layers of colour / opacity
-  - images own + aria labels
-
-  - refactor all code + commenting
