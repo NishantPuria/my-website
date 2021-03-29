@@ -179,11 +179,11 @@ a {
 }
 
 .navbar-middle-line-color-clicked {
-  background: linear-gradient(to top right, transparent calc(47% - 1em), rgb(112, 162, 136), transparent calc(53% + 1em));
+  background: linear-gradient(to top right, transparent calc(47% - 0.07em), rgb(112, 162, 136), transparent calc(53% + 0.07em));
 }
 
 .navbar-middle-line-color {
-  background: linear-gradient(to top right, transparent calc(48.5% - 1em), rgb(255, 255, 255), transparent calc(51.5% + 1em));
+  background: linear-gradient(to top right, transparent calc(48.5% - 0.07em), rgb(255, 255, 255), transparent calc(51.5% + 0.07em));
 }
 
 /* ------ MAIN SECTION CLASSES ------ */
