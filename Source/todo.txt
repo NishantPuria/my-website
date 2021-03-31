@@ -1,0 +1,8 @@
+BUGS
+
+  - user mouse already over element when event listeners are activated (mouseout glitch)
+  - scrollable during startup animation
+
+SUPPORT
+
+  - form handling
