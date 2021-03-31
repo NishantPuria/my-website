@@ -379,13 +379,13 @@ function toggleAboutMeBottomVisibility(aboutMeHeader) {
 function toggleIconsVisibility(aboutMeHeader) {
   document.querySelectorAll('.icons.zero-percent-from-left-position').forEach((iconSet, i) => {
     iconSet.classList.toggle('zero-percent-from-left-position');
-    iconSet.classList.toggle('minus-twenty-vw-from-left-position');
+    iconSet.classList.toggle('minus-seventy-five-percent-from-left-position');
     iconSet.classList.toggle('opacity-zero');
   });
   if (aboutMeHeaderSelected != '') {
     iconSetName = aboutMeHeader.replace('about-me-', '').replace('header', 'icons');
     toggleOpacity(iconSetName);
-    document.querySelector(iconSetName).classList.toggle('minus-twenty-vw-from-left-position');
+    document.querySelector(iconSetName).classList.toggle('minus-seventy-five-percent-from-left-position');
     document.querySelector(iconSetName).classList.toggle('zero-percent-from-left-position');
   }
 }
